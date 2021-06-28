@@ -9,5 +9,15 @@ from Lexer import Lexer
 
 def run(fn, text):
     lexer = Lexer(fn, text)
-    tokens. error = lexer.make_token()
-    return tokens, error
+    tokens, errors = lexer.make_tokens()
+    return tokens, errors
+
+
+while True:
+    inp = input('basic >')
+    res, error = run('<stdin>', inp)
+
+    if error:
+        print(error.as_string())
+    else:
+        print(res)
